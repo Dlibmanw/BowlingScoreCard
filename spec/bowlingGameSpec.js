@@ -18,11 +18,19 @@ describe('The Bowling game', function(){
     expect(game.score()).toBe(20);
   })
 
-  it('can roll a sapre', function(){
+  it('can roll a spare', function(){
     game.roll(5);
     game.roll(5); 
     game.roll(3); 
     rollMany(0, 17);
     expect(game.score()).toBe(16);
+  })
+
+  it('can roll a strike', function(){
+    game.roll(10);
+    game.roll(2);
+    game.roll(3);
+    rollMany(0, 16);
+    expect(game.score()).toBe(20)
   })
 })
